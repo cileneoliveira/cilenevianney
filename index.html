@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-  <!-- Styles généraux + programme -->
   <style>
     body {
       margin: 0;
@@ -18,10 +17,11 @@
     /* Header éditorial */
     .header {
       background: #f8f6f2;
-      padding: 2.8rem 1.3rem 1.8rem 1.3rem;
+      padding: 2.8rem 1.3rem 1.2rem 1.3rem;
       display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
       position: relative;
     }
     .header-names {
@@ -32,6 +32,7 @@
       text-transform: uppercase;
       line-height: 1.05;
       color: #514c43;
+      text-align: center;
     }
     .header-accroche {
       font-size: 1.18rem;
@@ -39,9 +40,10 @@
       font-weight: 500;
       letter-spacing: 0.08em;
       display: block;
-      padding-top: 2.1rem;
-      margin-left: 2.7rem;
+      padding-top: 1.2rem;
       color: #514c43;
+      text-align: center;
+      margin-left: 0;
     }
     .header-accroche .accent {
       color: #e0b200;
@@ -86,124 +88,160 @@
       border-radius: 2px;
       margin: 0 auto;
     }
-    /* Programme du week-end */
-    .programme {
-      max-width: 650px;
-      margin: 0 auto 2.2rem auto;
+    /* Timeline programme */
+    .programme-timeline {
+      max-width: 480px;
+      margin: 0 auto 3.3rem auto;
+      position: relative;
       padding: 0 0.5em;
-      display: flex;
-      flex-direction: column;
-      gap: 1.45rem;
-      align-items: center;
     }
-    .programme-jour {
+    .timeline-line {
+      position: absolute;
+      left: 40px;
+      top: 0;
+      width: 2.5px;
+      height: 100%;
+      background: linear-gradient(180deg, #f4d35e 10%, #e0b200 80%);
+      border-radius: 1.3px;
+      z-index: 0;
+    }
+    .programme-event {
       display: flex;
       align-items: center;
-      gap: 1.4rem;
+      margin-bottom: 3.3rem;
+      position: relative;
     }
-    .programme-jour-principal {
+    .programme-event:last-child { margin-bottom: 0; }
+    .timeline-icon {
+      width: 36px;
+      min-width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #fffbe2;
+      box-shadow: 0 1.5px 7px #ead77023;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      margin-top: 0.8rem;
-      margin-bottom: 0.8rem;
+      justify-content: center;
+      z-index: 1;
+      border: 1.5px solid #ffe066;
+      margin-right: 1.2rem;
+      margin-left: 0.2rem;
     }
-    .programme-date {
+    .timeline-event-content {
+      flex: 1;
+      min-width: 0;
+      z-index: 2;
+    }
+    .timeline-event-title {
       font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
       font-size: 1.18rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
+      font-weight: 600;
+      letter-spacing: 0.11em;
       color: #988900;
       text-transform: uppercase;
+      margin-bottom: 0.15em;
     }
-    .programme-date-principal {
-      font-size: 1.55rem;
-      font-weight: 700;
+    .timeline-event-title.principal {
+      font-size: 1.42rem;
       color: #e0b200;
-      position: relative;
-      line-height: 1.1;
-      display: inline-block;
+      font-weight: 700;
       letter-spacing: 0.13em;
-      text-transform: uppercase;
+      position: relative;
     }
-    .programme-date-principal-underline {
+    .timeline-event-title.principal::after {
+      content: "";
       display: block;
-      width: 90%;
-      height: 6px;
-      background: linear-gradient(90deg, #ffe066 30%, #e0b200 100%);
+      width: 95%;
+      height: 5px;
+      background: linear-gradient(90deg,#ffe066 30%,#e0b200 100%);
       border-radius: 2px;
-      margin: 0.22em auto 0 auto;
-      opacity: 0.55;
+      margin: 0.19em 0 0 0;
+      opacity: 0.54;
     }
-    .programme-desc {
+    .timeline-event-desc {
       font-family: 'Inter', Arial, sans-serif;
-      font-size: 1.06rem;
-      opacity: 0.83;
+      font-size: 1.09rem;
+      opacity: 0.93;
       letter-spacing: 0.02em;
+      margin-top: 0.04em;
     }
-    .programme-desc-principal {
-      font-size: 1.11rem;
-      opacity: 0.97;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      margin-top: 0.1em;
+    .programme-event a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      padding: 0.1em 0.2em 0.1em 0;
+      border-radius: 7px;
+      transition: background 0.14s;
+    }
+    .programme-event a:hover {
+      background: #fffde6;
     }
     @media (max-width: 700px) {
-      .header-names {
-        font-size: 1.7rem;
-      }
-      .header-accroche {
-        font-size: 1rem;
-        margin-left: 1rem;
-      }
-      .programme {
-        gap: 1rem;
-      }
-      .programme-date-principal {
-        font-size: 1.13rem;
-      }
+      .header-names { font-size: 1.7rem; }
+      .header-accroche { font-size: 1rem; }
+      .programme-timeline { max-width: 98vw; }
+      .timeline-event-title.principal { font-size: 1.09rem; }
     }
   </style>
 </head>
 <body>
   <!-- HEADER -->
   <div class="header">
-    <!-- Sélecteur langue -->
     <div class="lang-switch">
       <button>FR</button>
       <button>PT</button>
     </div>
-    <div class="header-names">
-      CILENE<br>VIANNEY
-    </div>
+    <div class="header-names">CILENE<br>VIANNEY</div>
     <div class="header-accroche">
       Un week-end pour <span class="accent">célébrer</span> <span class="surligne">l’amour</span>
     </div>
   </div>
   <!-- SÉPARATEUR -->
   <div class="separateur"></div>
-  <div style="height:24px;"></div>
-  <!-- PROGRAMME -->
-  <div class="programme">
+  <div style="height:36px;"></div>
+  <!-- PROGRAMME : TIMELINE ÉDITORIALE -->
+  <div class="programme-timeline">
+    <div class="timeline-line"></div>
     <!-- Vendredi -->
-    <div class="programme-jour">
-      <span class="programme-date">Vendredi 16 juillet</span>
-      <span class="programme-desc">Verre de bienvenue</span>
+    <div class="programme-event">
+      <div class="timeline-icon">
+        <!-- Picto verre stylisé (SVG) -->
+        <svg viewBox="0 0 26 26" width="24" height="24" fill="none"><ellipse cx="13" cy="8" rx="8" ry="3.2" fill="#ffe066"/><ellipse cx="13" cy="8.5" rx="6.7" ry="2.2" fill="#fffbe2"/><path d="M7.2 9.1C7.6 15.5 11.3 21 13 21c1.7 0 5.4-5.5 5.8-11.9" stroke="#c2a518" stroke-width="1.2"/><rect x="12.1" y="21" width="1.8" height="3.2" rx="0.6" fill="#e6d27c"/></svg>
+      </div>
+      <div class="timeline-event-content">
+        <a href="#details-vendredi">
+          <div class="timeline-event-title">Vendredi 16 juillet</div>
+          <div class="timeline-event-desc">Verre de bienvenue</div>
+        </a>
+      </div>
     </div>
-    <!-- Samedi 17 – accentué -->
-    <div class="programme-jour-principal">
-      <span class="programme-date-principal">
-        Samedi 17 juillet
-        <span class="programme-date-principal-underline"></span>
-      </span>
-      <span class="programme-desc-principal">Cérémonie & Réception</span>
+    <!-- Samedi (jour principal) -->
+    <div class="programme-event">
+      <div class="timeline-icon">
+        <!-- Picto alliances abstraites (SVG minimal) -->
+        <svg width="24" height="24" viewBox="0 0 28 28" fill="none"><ellipse cx="14" cy="14" rx="7.5" ry="7" stroke="#e0b200" stroke-width="2"/><ellipse cx="16.5" cy="13.6" rx="5.3" ry="5.1" stroke="#f7eab2" stroke-width="1.2"/></svg>
+      </div>
+      <div class="timeline-event-content">
+        <a href="#details-samedi">
+          <div class="timeline-event-title principal">Samedi 17 juillet</div>
+          <div class="timeline-event-desc">Cérémonie & Réception</div>
+        </a>
+      </div>
     </div>
     <!-- Dimanche -->
-    <div class="programme-jour">
-      <span class="programme-date">Dimanche 18 juillet</span>
-      <span class="programme-desc">Déjeuner au bord de la piscine</span>
+    <div class="programme-event">
+      <div class="timeline-icon">
+        <!-- Picto piscine stylisé (SVG minimal) -->
+        <svg width="24" height="24" viewBox="0 0 26 26" fill="none"><rect x="3" y="9.5" width="20" height="8.8" rx="4" fill="#e8d8b3"/><ellipse cx="13" cy="14" rx="7.5" ry="2.8" fill="#ddebf2"/><ellipse cx="13" cy="14.5" rx="5.9" ry="1.7" fill="#b9dff0"/></svg>
+      </div>
+      <div class="timeline-event-content">
+        <a href="#details-dimanche">
+          <div class="timeline-event-title">Dimanche 18 juillet</div>
+          <div class="timeline-event-desc">Déjeuner au bord de la piscine</div>
+        </a>
+      </div>
     </div>
   </div>
-  <!-- Tu ajoutes ici le bloc suivant (lieu, etc.) -->
+  <!-- Bloc suivant : lieu, adresse, etc. -->
 </body>
 </html>
