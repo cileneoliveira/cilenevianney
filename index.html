@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Cilene & Vianney — Mariage 2027</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+      background: #f8f6f2;
+      color: #222;
+      min-height: 100vh;
+    }
+    .header {
+      background: linear-gradient(90deg, #ffe066 0%, #ffdf6b 100%);
+      padding: 2.5rem 0 1.2rem 0;
+      text-align: center;
+      letter-spacing: 0.1em;
+    }
+    .prenoms {
+      font-family: 'Inter', 'Arial Narrow', Arial, sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    .sub {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.1em;
+      font-weight: 500;
+    }
+    .programme {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 3rem 0 2rem 0;
+    }
+    .jour {
+      margin: 1.2rem 0;
+      font-size: 1.2rem;
+      font-weight: 400;
+      display: flex;
+      align-items: flex-end;
+      gap: 1.5rem;
+    }
+    .date-principale {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #d9a400;
+      background: #fff8e1;
+      border-radius: 20px;
+      padding: 0.35em 1.2em;
+      box-shadow: 0 1px 8px #f9e29a4d;
+      margin-right: 1.2rem;
+      letter-spacing: 0.14em;
+      border: 1.5px solid #f4c521;
+    }
+    .lieu {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 3rem 0;
+    }
+    .chateau {
+      width: 120px;
+      height: 80px;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .map-link {
+      color: #0057b7;
+      text-decoration: none;
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+    }
+    .infos {
+      max-width: 540px;
+      margin: 0 auto 2.5rem auto;
+      padding: 1.3rem;
+      background: #f2efe5;
+      border-radius: 18px;
+      font-size: 1.1rem;
+      box-shadow: 0 2px 12px #f7eed754;
+    }
+    .footer {
+      margin: 3rem 0 1rem 0;
+      text-align: center;
+      color: #9b9b97;
+      font-size: 1rem;
+      letter-spacing: 0.07em;
+    }
+    /* Responsive */
+    @media (max-width: 700px) {
+      .prenoms {
+        font-size: 2rem;
+      }
+      .programme {
+        margin: 2rem 0;
+      }
+      .chateau {
+        width: 80px; height: 52px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span class="prenoms">CILENE<br>VIANNEY</span>
+    <div class="sub">Week-end de mariage sous le soleil</div>
+  </div>
+
+  <div class="programme">
+    <div class="jour"><span>Vendredi 16 juillet</span> <span>Verre de bienvenue</span></div>
+    <div class="jour">
+      <span class="date-principale">Samedi 17 juillet</span>
+      <span>Cérémonie & Réception (jour principal)</span>
+    </div>
+    <div class="jour"><span>Dimanche 18 juillet</span> <span>Déjeuner au bord de la piscine</span></div>
+  </div>
+
+  <div class="lieu">
+    <div class="chateau">
+      <!-- Esquisse château 2 tours -->
+      <svg viewBox="0 0 110 60" width="110" height="60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="8" y="15" width="20" height="35" rx="4" stroke="#d9a400" stroke-width="3"/>
+        <rect x="82" y="15" width="20" height="35" rx="4" stroke="#d9a400" stroke-width="3"/>
+        <rect x="28" y="28" width="54" height="22" rx="5" stroke="#0057b7" stroke-width="2"/>
+        <rect x="40" y="38" width="12" height="12" rx="2" stroke="#d9a400" stroke-width="2"/>
+        <rect x="58" y="38" width="12" height="12" rx="2" stroke="#d9a400" stroke-width="2"/>
+      </svg>
+    </div>
+    <div>Château de Vaucouleurs, Puget-sur-Argens</div>
+    <a href="https://maps.app.goo.gl/P6wNuQfF6grdjiPb7" target="_blank" class="map-link">Voir sur Google Maps</a>
+  </div>
+
+  <div class="infos">
+    <b>Infos pratiques</b> :  
+    Hébergement à proximité, accès facile (parking sur place).  
+    Enfants bienvenus tout au long du week-end.
+  </div>
+
+  <div class="footer">
+    cilenevianney.com — France 2027
+  </div>
+</body>
+</html>
