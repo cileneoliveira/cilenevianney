@@ -16,7 +16,6 @@
       background-repeat: repeat;
       background-size: 340px 340px;
     }
-    /* Bande picturale Letterist */
     .header-picturale {
       width: 100vw;
       max-width: 100%;
@@ -27,37 +26,38 @@
       position: relative;
       background: transparent;
     }
-    /* Header éditorial, prénoms à gauche */
+    /* HEADER Letterist, prénoms à gauche */
     .header-flex-letterist {
       background: transparent;
-      padding: 2.8rem 1.3rem 1.2rem 1.3rem;
+      padding: 3.2rem 1.3rem 2rem 1.3rem;
       display: flex;
       flex-direction: row;
       align-items: flex-end;
       justify-content: flex-start;
       position: relative;
-      min-height: 130px;
-      gap: 3.2rem;
+      min-height: 135px;
+      gap: 3.7rem;
     }
     .header-names-letterist {
       font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-      font-size: 2.9rem;
+      font-size: 3.1rem;
       font-weight: 400;
-      letter-spacing: 0.13em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      line-height: 1.05;
+      line-height: 1.04;
       color: #514c43;
       text-align: left;
-      min-width: 180px;
+      min-width: 200px;
+      letter-spacing: 0.19em;
     }
     .header-accroche-letterist {
-      font-size: 1.22rem;
+      font-size: 1.3rem;
       font-family: 'Inter', Arial, sans-serif;
       font-weight: 500;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.09em;
       color: #514c43;
       text-align: left;
-      max-width: 430px;
+      max-width: 490px;
       padding-bottom: 0.3rem;
     }
     .header-accroche-letterist .accent {
@@ -66,14 +66,14 @@
     }
     .header-accroche-letterist .surligne {
       background: #ffe066a0;
-      border-radius: 6px;
+      border-radius: 7px;
       color: #b38b01;
-      padding: 0 0.23em;
+      padding: 0 0.26em;
     }
     .lang-switch {
       position: absolute;
-      top: 17px;
-      right: 34px;
+      top: 22px;
+      right: 38px;
       z-index: 2;
     }
     .lang-switch button {
@@ -95,76 +95,101 @@
       font-weight: 500;
       margin-left: 0.2em;
     }
-    /* Séparateur éditorial */
+    /* SÉPARATEUR ÉDITORIAL large, coup de pinceau */
     .separateur {
-      height: 2px;
-      width: 68%;
-      background: linear-gradient(90deg, #f7eab2 0%, #d8c97b 100%);
-      border-radius: 2px;
-      margin: 0 auto;
+      height: 10px;
+      width: 76vw;
+      max-width: 950px;
+      margin: -17px auto 0 auto;
+      display: block;
+      border: none;
+      background: none;
+      position: relative;
+      z-index: 1;
     }
-    /* PROGRAMME façon Letterist */
+    .separateur svg { width: 100%; height: 100%; display: block; }
+    /* PROGRAMME façon Letterist contemporain, disposition libre */
     .programme-letterist {
-      max-width: 650px;
-      margin: 120px auto 100px auto;
+      max-width: 1020px;
+      margin: 95px auto 80px auto;
       display: flex;
       flex-direction: column;
-      gap: 62px;
+      gap: 90px;
       position: relative;
+      z-index: 2;
     }
-    .programme-event-letterist {
+    /* JOUR événement déstructuré */
+    .prog-event-libre {
       display: flex;
       align-items: flex-start;
-      gap: 38px;
+      gap: 56px;
       position: relative;
+      min-height: 130px;
     }
-    .programme-illus-letterist {
-      min-width: 58px;
-      margin-top: -10px;
-      margin-bottom: -8px;
-      opacity: 0.92;
+    .prog-dessin-libre {
+      min-width: 98px;
+      max-width: 160px;
+      margin-top: -34px;
+      margin-bottom: -12px;
+      margin-left: -26px;
+      margin-right: 0;
+      opacity: 1;
+      flex-shrink: 0;
+      z-index: 1;
     }
-    .programme-texte-letterist {
+    .prog-texte-libre {
       flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
+      margin-top: 18px;
+      z-index: 2;
     }
-    .programme-jour-letterist {
+    .prog-jour-libre {
       font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-      font-size: 1.34rem;
+      font-size: 1.7rem;
       font-weight: 700;
       color: #e0b200;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.13em;
       margin-bottom: 0.1rem;
+      text-shadow: 0 2px 13px #ffe06633;
     }
-    .programme-desc-letterist {
+    .prog-desc-libre {
       font-family: 'Inter', Arial, sans-serif;
-      font-size: 1.11rem;
+      font-size: 1.21rem;
       color: #514c43;
-      letter-spacing: 0.03em;
-      opacity: 0.94;
+      letter-spacing: 0.02em;
+      opacity: 0.96;
       margin-bottom: 0.3rem;
     }
-    .programme-sep-letterist {
-      width: 73%;
-      height: 1.5px;
-      background: linear-gradient(90deg,#ead770 40%,#f9e490 100%);
-      border-radius: 1.5px;
-      margin: 40px 0 0 60px;
-      opacity: 0.33;
+    /* Séparateur coup de pinceau entre jours */
+    .prog-pinceau {
+      width: 62vw;
+      max-width: 700px;
+      height: 16px;
+      margin: 38px auto -54px 160px;
+      display: block;
       border: none;
+      background: none;
+      z-index: 1;
+      opacity: 0.9;
     }
+    .prog-pinceau svg { width: 100%; height: 100%; display: block; }
+    /* Responsive */
     @media (max-width: 900px) {
-      .header-flex-letterist { flex-direction: column; align-items: flex-start; gap: 1.1rem;}
-      .header-names-letterist { font-size: 1.7rem; min-width: 0;}
-      .header-accroche-letterist { font-size: 1rem; max-width: 100%; }
+      .header-flex-letterist { flex-direction: column; align-items: flex-start; gap: 1.5rem;}
+      .header-names-letterist { font-size: 1.8rem; min-width: 0;}
+      .header-accroche-letterist { font-size: 1.04rem; max-width: 98vw;}
+      .prog-jour-libre { font-size: 1.18rem; }
+      .prog-dessin-libre { min-width: 63px; max-width: 90px; margin-top: -16px;}
+      .prog-event-libre { gap: 22px; }
     }
     @media (max-width: 700px) {
-      .programme-letterist { max-width: 99vw; gap: 34px;}
-      .programme-event-letterist { gap: 17px; }
-      .programme-illus-letterist { min-width: 39px; }
+      .programme-letterist { max-width: 99vw; gap: 39px;}
+      .prog-event-libre { flex-direction: column; gap: 0; min-height: 0;}
+      .prog-dessin-libre { margin-left: 0; margin-bottom: 0;}
+      .prog-pinceau { margin-left: 0;}
     }
   </style>
 </head>
@@ -189,70 +214,99 @@
       Un week-end pour <span class="accent">célébrer</span> <span class="surligne">l’amour</span>
     </div>
   </div>
-  <!-- SÉPARATEUR -->
-  <div class="separateur"></div>
+  <!-- SÉPARATEUR façon “coup de pinceau” large -->
+  <div class="separateur">
+    <svg viewBox="0 0 1100 10" fill="none">
+      <path d="M0 8 Q 320 1 600 7 Q 900 17 1100 2" stroke="#ffe066" stroke-width="10" stroke-linecap="round" opacity="0.44"/>
+    </svg>
+  </div>
 
-  <!-- PROGRAMME façon Letterist, éditorial -->
+  <!-- PROGRAMME façon Letterist, déstructuré, dessins contemporains -->
   <div class="programme-letterist">
-    <!-- Vendredi -->
-    <div class="programme-event-letterist">
-      <div class="programme-illus-letterist">
-        <!-- Verre à vin croqué, trait “main levée”, splash de jaune -->
-        <svg width="65" height="66" viewBox="0 0 65 66" fill="none">
-          <ellipse cx="32.5" cy="17" rx="14" ry="5" fill="#ffe066" opacity="0.82"/>
-          <path d="M31 14 Q 42 18 33 44 Q 19 18 31 14 Z" stroke="#e0b200" stroke-width="2.2" fill="#f8f4d8" />
-          <ellipse cx="32.5" cy="24" rx="13" ry="3.7" fill="#fffbe2" opacity="0.4"/>
-          <path d="M31.8 43 V 62" stroke="#b38b01" stroke-width="1.8" stroke-linecap="round"/>
-          <!-- éclaboussure main -->
-          <path d="M23 22 Q 27 28 44 24" stroke="#f7eab2" stroke-width="2.1" opacity="0.27"/>
-          <ellipse cx="47" cy="12" rx="4" ry="1.2" fill="#ffe066" opacity="0.25"/>
+
+    <!-- VENDREDI, verre graphique, croquis style encre -->
+    <div class="prog-event-libre">
+      <div class="prog-dessin-libre">
+        <!-- Verre stylisé, effet “coup de pinceau” et main levée -->
+        <svg width="110" height="120" viewBox="0 0 110 120" fill="none">
+          <!-- coup de pinceau jaune -->
+          <path d="M7 25 Q 45 8 100 30 Q 60 52 18 39" fill="#ffe066" opacity="0.61"/>
+          <!-- verre -->
+          <ellipse cx="59" cy="38" rx="30" ry="11" fill="#fffbe2" opacity="0.75"/>
+          <path d="M54 19 Q 84 32 59 95 Q 34 32 54 19 Z" stroke="#e0b200" stroke-width="3.5" fill="#f8f4d8" />
+          <ellipse cx="59" cy="48" rx="24" ry="6" fill="#ffe066" opacity="0.55"/>
+          <path d="M57 93 V 110" stroke="#b38b01" stroke-width="2.3" stroke-linecap="round"/>
+          <!-- splash -->
+          <ellipse cx="92" cy="27" rx="8" ry="2.4" fill="#ffe066" opacity="0.37"/>
         </svg>
       </div>
-      <div class="programme-texte-letterist">
-        <div class="programme-jour-letterist">Vendredi 16 juillet</div>
-        <div class="programme-desc-letterist">Verre de bienvenue</div>
+      <div class="prog-texte-libre">
+        <div class="prog-jour-libre">Vendredi 16 juillet</div>
+        <div class="prog-desc-libre">Verre de bienvenue</div>
       </div>
     </div>
-    <hr class="programme-sep-letterist"/>
-    <!-- Samedi -->
-    <div class="programme-event-letterist">
-      <div class="programme-illus-letterist">
-        <!-- Château stylisé, façon croquis (deux tours carrées), effet plume -->
-        <svg width="70" height="68" viewBox="0 0 70 68" fill="none">
-          <rect x="8" y="29" width="14" height="25" fill="#f9e490" stroke="#e0b200" stroke-width="1.7"/>
-          <rect x="48" y="29" width="14" height="25" fill="#f9e490" stroke="#e0b200" stroke-width="1.7"/>
-          <rect x="22" y="19" width="26" height="35" fill="#fffbe2" stroke="#e0b200" stroke-width="1.7"/>
-          <rect x="26" y="44" width="7" height="10" fill="#e0b200" opacity="0.16"/>
-          <rect x="37" y="44" width="7" height="10" fill="#e0b200" opacity="0.14"/>
-          <path d="M22 19 Q 35 2 48 19" stroke="#e0b200" stroke-width="2" fill="none"/>
-          <path d="M13 55 Q 17 62 35 64 Q 53 62 57 55" stroke="#e0b200" stroke-width="1.5" fill="none" opacity="0.25"/>
-          <!-- effet sketch “main levée” -->
-          <path d="M10 26 Q 25 10 36 17" stroke="#be9c16" stroke-width="0.9" opacity="0.28"/>
+
+    <div class="prog-pinceau">
+      <svg viewBox="0 0 700 16" fill="none">
+        <path d="M7 8 Q 150 17 350 8 Q 600 4 690 10" stroke="#ffe066" stroke-width="9" stroke-linecap="round" opacity="0.47"/>
+      </svg>
+    </div>
+
+    <!-- SAMEDI, château graphique, style croquis -->
+    <div class="prog-event-libre">
+      <div class="prog-dessin-libre">
+        <!-- Château deux tours carrées, façon croquis “débordant” -->
+        <svg width="142" height="115" viewBox="0 0 142 115" fill="none">
+          <!-- ombre jaune -->
+          <ellipse cx="75" cy="109" rx="62" ry="9" fill="#ffe066" opacity="0.37"/>
+          <!-- tours -->
+          <rect x="8" y="52" width="28" height="57" fill="#f9e490" stroke="#e0b200" stroke-width="2.8"/>
+          <rect x="106" y="52" width="28" height="57" fill="#f9e490" stroke="#e0b200" stroke-width="2.8"/>
+          <!-- corps principal -->
+          <rect x="36" y="27" width="70" height="82" fill="#fffbe2" stroke="#e0b200" stroke-width="2.9"/>
+          <rect x="49" y="81" width="15" height="18" fill="#e0b200" opacity="0.14"/>
+          <rect x="80" y="81" width="15" height="18" fill="#e0b200" opacity="0.14"/>
+          <!-- toits esquissés -->
+          <path d="M36 27 Q 72 3 106 27" stroke="#e0b200" stroke-width="3.1" fill="none"/>
+          <path d="M22 110 Q 41 102 120 109" stroke="#e0b200" stroke-width="1.5" fill="none" opacity="0.21"/>
+          <!-- coups de crayon -->
+          <path d="M17 60 Q 36 31 68 41" stroke="#be9c16" stroke-width="1.7" opacity="0.18"/>
         </svg>
       </div>
-      <div class="programme-texte-letterist">
-        <div class="programme-jour-letterist" style="font-size:1.38rem;">Samedi 17 juillet</div>
-        <div class="programme-desc-letterist" style="font-size:1.16rem;"><strong>Cérémonie & Réception</strong></div>
+      <div class="prog-texte-libre">
+        <div class="prog-jour-libre" style="font-size:2rem;">Samedi 17 juillet</div>
+        <div class="prog-desc-libre" style="font-size:1.24rem;"><strong>Cérémonie & Réception</strong></div>
       </div>
     </div>
-    <hr class="programme-sep-letterist"/>
-    <!-- Dimanche -->
-    <div class="programme-event-letterist">
-      <div class="programme-illus-letterist">
-        <!-- Piscine et palmiers, façon aquarelle/plume -->
-        <svg width="68" height="38" viewBox="0 0 68 38" fill="none">
-          <ellipse cx="34" cy="22" rx="27" ry="9.8" fill="#e8d8b3" opacity="0.63"/>
-          <ellipse cx="34" cy="26" rx="19" ry="3.1" fill="#ddebf2"/>
-          <ellipse cx="34" cy="29" rx="14" ry="1.5" fill="#b9dff0"/>
-          <path d="M13 22 Q 31 36 59 18" stroke="#a6bcbf" stroke-width="1.2" stroke-linecap="round"/>
-          <!-- palmier “main levée” -->
-          <path d="M54 14 Q 56 10 58 15 Q 59 8 63 16" stroke="#e0b200" stroke-width="1.1" fill="none"/>
-          <path d="M57 14 Q 59 11 61 15" stroke="#e0b200" stroke-width="1" fill="none"/>
+
+    <div class="prog-pinceau">
+      <svg viewBox="0 0 700 16" fill="none">
+        <path d="M7 8 Q 120 3 370 15 Q 600 13 690 10" stroke="#ffe066" stroke-width="9" stroke-linecap="round" opacity="0.32"/>
+      </svg>
+    </div>
+
+    <!-- DIMANCHE, piscine & palmier, abstrait -->
+    <div class="prog-event-libre">
+      <div class="prog-dessin-libre">
+        <!-- Piscine graphique, soleil, palmier, effet “tâche” -->
+        <svg width="118" height="104" viewBox="0 0 118 104" fill="none">
+          <!-- fond vague aquarelle -->
+          <ellipse cx="64" cy="90" rx="48" ry="10" fill="#b9dff0" opacity="0.46"/>
+          <!-- piscine -->
+          <ellipse cx="60" cy="73" rx="36" ry="11.7" fill="#ddebf2" opacity="0.82"/>
+          <!-- trait d'eau -->
+          <ellipse cx="61" cy="82" rx="25" ry="2.5" fill="#b9dff0"/>
+          <!-- palmier -->
+          <path d="M97 68 Q 94 62 99 60 Q 97 54 106 58" stroke="#e0b200" stroke-width="2.2" fill="none"/>
+          <path d="M101 67 Q 104 63 107 66" stroke="#e0b200" stroke-width="1.5" fill="none"/>
+          <!-- soleil -->
+          <ellipse cx="99" cy="29" rx="12" ry="6" fill="#ffe066" opacity="0.44"/>
+          <ellipse cx="103" cy="21" rx="5.7" ry="2.4" fill="#ffe066" opacity="0.22"/>
         </svg>
       </div>
-      <div class="programme-texte-letterist">
-        <div class="programme-jour-letterist">Dimanche 18 juillet</div>
-        <div class="programme-desc-letterist">Déjeuner au bord de la piscine</div>
+      <div class="prog-texte-libre">
+        <div class="prog-jour-libre">Dimanche 18 juillet</div>
+        <div class="prog-desc-libre">Déjeuner au bord de la piscine</div>
       </div>
     </div>
   </div>
