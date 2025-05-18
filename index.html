@@ -4,133 +4,151 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Cilene & Vianney – Mariage</title>
-  <!-- Google Fonts pour la touche chic -->
-  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,400|Inter:400,500" rel="stylesheet">
+  <!-- Playfair Display pour tout, très éditorial -->
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,400&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --jaune: #efc84a;
+      --bleu: #2538a5;
+      --fond: #fcfaf6;
+      --texte: #232323;
+      --or: #dfb241;
+    }
     body {
-      font-family: 'Inter', Arial, sans-serif;
-      background: #fcfaf6;
-      color: #232323;
+      font-family: 'Playfair Display', serif;
+      background: var(--fond);
+      color: var(--texte);
       margin: 0;
       padding: 0;
     }
     header {
-      text-align: center;
-      padding: 60px 0 30px 0;
       position: relative;
-      background: #fcfaf6;
+      background: var(--fond);
+      padding: 0 0 2.5rem 0;
     }
     .bande-jaune {
-      width: 90vw;
-      max-width: 1500px;
-      height: 70px;
+      width: 100vw;
+      min-height: 70px;
+      height: 13vw;
       background: url('bande-jaune.png') center/cover no-repeat;
-      margin: 0 auto 2rem auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    nav.menu {
+      position: absolute;
+      left: 0; top: 0; width: 100vw; height: 13vw; min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 6vw;
+      z-index: 2;
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+    nav.menu a, nav.menu .switch-lang a {
+      color: var(--bleu);
+      text-decoration: none;
+      margin: 0 1.1rem;
+      font-weight: 600;
+      transition: color 0.2s;
+      font-size: 1.07rem;
+      background: none;
+      border: none;
+      outline: none;
+      font-family: inherit;
+    }
+    nav.menu a:hover, nav.menu .switch-lang a.active {
+      color: var(--or);
+      border-bottom: 2px solid var(--or);
+    }
+    nav.menu .switch-lang {
+      margin-left: 2vw;
+      font-size: 1.09rem;
+    }
+    nav.menu .switch-lang a {
+      margin: 0 0.25rem;
     }
     .noms {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      letter-spacing: 0.08em;
+      font-size: 3.2rem;
+      letter-spacing: 0.11em;
       font-weight: 700;
-      margin: 0.5rem 0;
+      margin: 3.8vw 0 0.8vw 0;
+      text-align: center;
+      color: var(--texte);
     }
     .dates {
-      margin: 1rem 0 0.5rem 0;
-      font-size: 1.3rem;
-      color: #b5963b;
-      font-weight: 500;
-    }
-    .dates .jour {
-      font-size: 2.3rem;
-      color: #dfb241;
-      font-weight: 700;
-      vertical-align: middle;
-      margin: 0 0.3rem;
-    }
-    .dates .we {
-      font-size: 1rem;
-      color: #232323;
-      font-weight: 400;
-      display: block;
-      margin-top: 0.2rem;
-    }
-    nav {
-      margin: 2.2rem 0 0 0;
-    }
-    nav a {
-      text-decoration: none;
-      color: #2538a5;
-      font-weight: 500;
-      margin: 0 1.2rem;
-      font-size: 1.06rem;
-      transition: color 0.2s;
-    }
-    nav a:hover {
-      color: #e5a733;
-    }
-    .switch-lang {
-      margin-left: 1.6rem;
-      font-size: 1.05rem;
-    }
-    .switch-lang a {
-      color: #222;
-      text-decoration: none;
-      margin: 0 0.2rem;
+      text-align: center;
+      margin: 0;
+      font-size: 1.5rem;
+      color: var(--or);
       font-weight: 600;
       letter-spacing: 0.04em;
     }
-    .switch-lang a.active {
-      color: #2538a5;
-      border-bottom: 2px solid #2538a5;
-      padding-bottom: 2px;
+    .dates .jour {
+      font-size: 2.4rem;
+      color: var(--or);
+      font-weight: 700;
+      margin: 0 0.35rem;
+      vertical-align: middle;
+    }
+    .dates .we {
+      display: block;
+      color: var(--texte);
+      font-size: 1rem;
+      font-weight: 400;
+      margin-top: 0.05rem;
+      letter-spacing: 0;
     }
     .vagues {
       width: 100vw;
-      max-width: 1700px;
-      margin: 2.5rem auto 0 auto;
-      height: 80px;
+      min-height: 38px;
+      height: 5vw;
       background: url('vagues.png') center/cover no-repeat;
+      margin: 2.2vw 0 0 0;
+      display: block;
     }
-
-    /* SECTION BIENVENUE */
     .bienvenue {
-      max-width: 640px;
-      margin: 4.5rem auto 2.5rem auto;
-      background: rgba(255,255,255,0.98);
-      border-radius: 1.7rem;
-      box-shadow: 0 3px 24px 0 rgba(220,200,110,0.09);
-      padding: 2.7rem 2.2rem;
+      max-width: 690px;
+      margin: 4rem auto 2rem auto;
+      background: rgba(255,255,255,0.99);
+      border-radius: 1.8rem;
+      box-shadow: 0 3px 16px 0 rgba(220,200,110,0.06);
+      padding: 2.5rem 2rem 2.5rem 2rem;
       text-align: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.28rem;
-      line-height: 1.7;
-      color: #232323;
+      font-size: 1.25rem;
+      line-height: 1.65;
+      color: var(--texte);
       letter-spacing: 0.01em;
     }
-    @media (max-width: 700px) {
+    @media (max-width: 900px) {
       .noms { font-size: 2rem; }
       .dates .jour { font-size: 1.3rem; }
-      .bienvenue { font-size: 1.08rem; padding: 1.2rem 0.8rem;}
-      .bande-jaune, .vagues {height:40px;}
+      .bande-jaune, nav.menu {height: 56px;}
+      .bienvenue { font-size: 1.08rem; padding: 1.2rem 0.7rem;}
+      .vagues { height: 32px;}
     }
   </style>
 </head>
 <body>
   <header>
     <div class="bande-jaune"></div>
+    <nav class="menu">
+      <div>
+        <a href="#programme">Programme</a>
+        <a href="#acces">Accès</a>
+        <a href="#rsvp">RSVP</a>
+      </div>
+      <div class="switch-lang">
+        <a href="#" class="active">FR</a> | <a href="#">PT</a>
+      </div>
+    </nav>
     <div class="noms">CILENE &amp; VIANNEY</div>
     <div class="dates">
       <span class="jour">17</span> juillet 2027
       <span class="we">Week-end du 16 au 18 juillet</span>
     </div>
-    <nav>
-      <a href="#programme">Programme</a>
-      <a href="#acces">Accès</a>
-      <a href="#rsvp">RSVP</a>
-      <span class="switch-lang">
-        <a href="#" class="active">FR</a> | <a href="#">PT</a>
-      </span>
-    </nav>
     <div class="vagues"></div>
   </header>
 
@@ -139,8 +157,5 @@
     sous le soleil et entourés de ceux qui comptent.<br>
     Nous serions heureux de vous accueillir pour partager ces moments avec nous.
   </section>
-
-  <!-- Ajoute ici les autres sections (Programme, Accès, RSVP, etc.) -->
-
 </body>
 </html>
