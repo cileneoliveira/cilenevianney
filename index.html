@@ -121,6 +121,12 @@
       margin: 2vw 0 0 0;
       display: block;
     }
+    .vagues-svg {
+      width: 100vw;
+      margin: 2vw 0 0 0;
+      overflow: hidden;
+    }
+
     .bienvenue {
       max-width: 660px;
       margin: 4rem auto 2.5rem auto;
@@ -247,7 +253,18 @@
       <span class="jour">17</span> juillet 2027
       <span class="we">Week-end du 16 au 18 juillet</span>
     </div>
-    <div class="vagues"></div>
+    <!--<div class="vagues"></div> -->
+    <div class="vagues-svg">
+  <svg width="100%" height="54" viewBox="0 0 1200 54" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+    <!-- Ligne picturale du haut -->
+    <path d="M0,30 Q150,45 350,32 Q470,25 600,34 Q770,45 900,28 Q1050,12 1200,34" 
+      stroke="#23338d" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+    <!-- Ligne picturale du bas -->
+    <path d="M0,44 Q100,33 300,46 Q520,60 750,40 Q980,22 1200,44"
+      stroke="#23338d" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.83"/>
+  </svg>
+</div>
+
   </header>
 
   <section class="bienvenue">
