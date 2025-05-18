@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cilene & Vianney – Mariage sous le soleil</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Polices -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       background: #f8f7f2;
@@ -36,12 +37,14 @@
       box-sizing: border-box;
     }
     h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3.2rem;
+      font-family: 'Bebas Neue', Arial, sans-serif;
+      font-size: 3.6rem;
       text-align: center;
       margin: 32px 0 0 0;
-      letter-spacing: 2px;
+      letter-spacing: 6px;
       line-height: 1;
+      font-weight: normal;
+      text-transform: uppercase;
     }
     .et {
       font-family: 'Inter', Arial, sans-serif;
@@ -59,35 +62,95 @@
       width: 100%;
       display: flex;
       justify-content: space-between;
-      margin: 32px 0 0 0;
+      margin: 38px 0 0 0;
+      gap: 30px;
+      align-items: flex-start;
     }
-    .programme {
-      width: 52%;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      font-size: 1.15rem;
+    /* TIMELINE */
+    .timeline-section {
+      width: 54%;
+      min-width: 220px;
+      padding-right: 0;
     }
-    .programme-titre {
+    .timeline-title {
       font-weight: bold;
-      font-size: 1.15rem;
+      font-size: 1.14rem;
       letter-spacing: 1px;
       margin-bottom: 18px;
+      text-transform: uppercase;
+      color: #223128dd;
     }
-    .event {
-      margin-bottom: 10px;
+    .timeline {
+      position: relative;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 38px;
+      align-items: flex-start;
     }
-    .event-date {
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 13px;
+      top: 3px;
+      bottom: 3px;
+      width: 3px;
+      background: #22312830;
+      border-radius: 2px;
+      z-index: 1;
+    }
+    .timeline-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 22px;
+      position: relative;
+    }
+    .timeline-dot {
+      width: 18px;
+      height: 18px;
+      background: #f8f7f2;
+      border: 3px solid #22312888;
+      border-radius: 50%;
+      margin-top: 1px;
+      z-index: 2;
+      transition: border 0.2s, background 0.2s;
+    }
+    .timeline-item-active .timeline-dot,
+    .timeline-dot-active {
+      border: 4px solid #d9a700;
+      background: #fff8e1;
+      box-shadow: 0 0 0 2px #e8c04955;
+    }
+    .timeline-date {
+      font-size: 1.14rem;
       font-weight: bold;
-      font-size: 1.13rem;
-      margin-bottom: 2px;
+      color: #223128cc;
     }
-    .event-ceremony {
+    .timeline-label {
+      font-size: 1.03rem;
+      margin-top: 1px;
+      color: #223128b0;
+    }
+    .timeline-date-active {
       color: #d9a700;
-      font-weight: bold;
+      font-size: 1.22rem;
+      letter-spacing: 1px;
     }
+    .timeline-label-active {
+      color: #223128;
+      font-weight: bold;
+      font-size: 1.08rem;
+      margin-top: 2px;
+      position: relative;
+    }
+    .timeline-wave {
+      margin-top: 3px;
+      display: block;
+    }
+    /* COLONNE DROITE (ILLUSTRATION) */
     .illustration {
-      width: 44%;
+      width: 43%;
+      min-width: 180px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -96,12 +159,14 @@
     .chateau {
       width: 120px;
       margin-bottom: 12px;
-      /* Utilise un SVG stylisé ci-dessous */
+      display: block;
     }
     .chateau-label {
       font-weight: bold;
       margin-bottom: 2px;
       text-align: center;
+      letter-spacing: 0.2px;
+      line-height: 1.2;
     }
     .voir-plan {
       color: #223128;
@@ -112,9 +177,14 @@
       align-items: center;
       gap: 5px;
       text-decoration: none;
+      transition: color 0.18s;
     }
+    .voir-plan:hover {
+      color: #d9a700;
+    }
+    /* INFOS PRATIQUES */
     .infos-pratiques {
-      margin: 36px 0 0 0;
+      margin: 38px 0 0 0;
       width: 100%;
       text-align: center;
     }
@@ -131,6 +201,10 @@
       gap: 7px;
       font-size: 1.08rem;
       min-width: 120px;
+      color: #223128c8;
+    }
+    .info-item svg {
+      flex-shrink: 0;
     }
     .rsvp-btn {
       margin: 26px auto 0 auto;
@@ -152,11 +226,12 @@
       margin: 40px auto 0 auto;
       display: block;
     }
-    @media (max-width: 680px) {
-      .container, .bande-jaune, .vague-bas { width: 97vw; }
-      .programme-section { flex-direction: column; align-items: center; }
-      .programme, .illustration { width: 98%; }
-      .illustration { margin-top: 18px; }
+    @media (max-width: 700px) {
+      .container, .bande-jaune, .vague-bas { width: 98vw; }
+      .programme-section { flex-direction: column; gap: 0; }
+      .timeline-section, .illustration { width: 100%; min-width: 0; }
+      .illustration { margin-top: 38px; }
+      h1 { font-size: 2.1rem; }
     }
   </style>
 </head>
@@ -168,22 +243,38 @@
     <h1>VIANNEY</h1>
     <div class="subtitle">WEEK-END DE MARIAGE SOUS LE SOLEIL</div>
     <div class="programme-section">
-      <div class="programme">
-        <div class="programme-titre">LE PROGRAMME</div>
-        <div class="event">
-          <div class="event-date">Vendredi 16 juillet</div>
-          <div>Verre de bienvenue</div>
-        </div>
-        <div class="event">
-          <div class="event-date event-ceremony">Samedi 17 juillet</div>
-          <div><strong>Cérémonie<br>Dîner &amp; fête</strong></div>
-        </div>
-        <div class="event">
-          <div class="event-date">Dimanche 18 juillet</div>
-          <div>Déjeuner au<br>bord de la piscine</div>
+      <div class="timeline-section">
+        <div class="timeline-title">LE PROGRAMME</div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div>
+              <div class="timeline-date">Vendredi 16 juillet</div>
+              <div class="timeline-label">Verre de bienvenue</div>
+            </div>
+          </div>
+          <div class="timeline-item timeline-item-active">
+            <div class="timeline-dot timeline-dot-active"></div>
+            <div>
+              <div class="timeline-date timeline-date-active">Samedi 17 juillet</div>
+              <div class="timeline-label timeline-label-active">
+                <strong>Cérémonie</strong><br>
+                <strong>Dîner & fête</strong>
+                <svg class="timeline-wave" viewBox="0 0 70 12" width="70" height="12"><path d="M0 8 Q 20 2 35 8 T 70 8" stroke="#223128" stroke-width="2.5" fill="none"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div>
+              <div class="timeline-date">Dimanche 18 juillet</div>
+              <div class="timeline-label">Déjeuner au<br>bord de la piscine</div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="illustration">
+        <!-- Illustration château stylisé -->
         <svg class="chateau" viewBox="0 0 140 90" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="10" y="40" width="28" height="38" stroke="#223128" stroke-width="2"/>
           <rect x="48" y="24" width="44" height="54" stroke="#223128" stroke-width="2"/>
@@ -201,7 +292,7 @@
       </div>
     </div>
     <div class="infos-pratiques">
-      <div class="programme-titre">INFOS PRATIQUES</div>
+      <div class="timeline-title">INFOS PRATIQUES</div>
       <div class="infos-icons">
         <div class="info-item">
           <svg width="22" height="18" fill="none" stroke="#223128" stroke-width="2"><rect x="1" y="7" width="20" height="10" rx="2"/><line x1="6" y1="17" x2="6" y2="13"/><line x1="16" y1="17" x2="16" y2="13"/></svg>
