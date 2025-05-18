@@ -117,7 +117,7 @@
     .vagues {
       width: 100vw;
       height: 15px;
-      background: url('vagues_test.png') center/cover no-repeat;
+      background: url('vagues_test.png') center/contain no-repeat;
       margin: 2vw 0 0 0;
       display: block;
     }
@@ -150,6 +150,83 @@
       nav.menu ul { gap: 1.1rem; }
       .switch-lang { right: 2vw; font-size: 0.97rem;}
     }
+    .programme {
+  max-width: 540px;
+  margin: 4.5rem auto 3rem auto;
+  padding: 0 1rem;
+  text-align: left;
+  font-family: 'Space Grotesk', Arial, sans-serif;
+}
+
+.programme h2 {
+  font-size: 1.3rem;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #23338d;
+  margin-bottom: 2.6rem;
+  text-align: center;
+  position: relative;
+}
+.programme h2:after {
+  content: '';
+  display: block;
+  margin: 12px auto 0 auto;
+  width: 80px;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #efc84a 60%, #f47c6c 100%);
+}
+
+.timeline {
+  position: relative;
+  margin-left: 30px;
+  border-left: 2px solid #efc84a;
+  padding-left: 25px;
+}
+.timeline-block {
+  position: relative;
+  margin-bottom: 2.6rem;
+}
+.timeline-dot {
+  position: absolute;
+  left: -37px;
+  top: 2px;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border: 3px solid #efc84a;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px 0 rgba(190,170,60,0.10);
+}
+.timeline-date {
+  font-weight: 600;
+  font-size: 1.09rem;
+  color: #23338d;
+  letter-spacing: 0.09em;
+  margin-bottom: 0.11rem;
+}
+.timeline-date.highlight {
+  color: #e8b12c;
+  font-size: 1.21rem;
+  letter-spacing: 0.12em;
+}
+.timeline-event {
+  font-size: 1.04rem;
+  color: #232323;
+  opacity: 0.93;
+  margin-left: 0.04rem;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+@media (max-width: 600px) {
+  .programme { max-width: 97vw; }
+  .timeline { margin-left: 15px; padding-left: 13px; }
+  .timeline-dot { left: -20px; width: 12px; height: 12px; }
+  .programme h2:after { width: 42px; height: 3px;}
+}
+
   </style>
 </head>
 <body>
@@ -180,5 +257,26 @@
     Nous serions heureux de vous accueillir pour partager ces moments avec nous.
     <div class="trait-color"></div>
   </section>
+  <section class="programme">
+  <h2>Programme</h2>
+  <div class="timeline">
+    <div class="timeline-block">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">Vendredi 16 juillet</div>
+      <div class="timeline-event">Verre de bienvenue</div>
+    </div>
+    <div class="timeline-block">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date highlight">Samedi 17 juillet</div>
+      <div class="timeline-event">Cérémonie &amp; réception</div>
+    </div>
+    <div class="timeline-block">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">Dimanche 18 juillet</div>
+      <div class="timeline-event">Déjeuner au bord de la piscine</div>
+    </div>
+  </div>
+</section>
+
 </body>
 </html>
