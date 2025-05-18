@@ -1,32 +1,146 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <title>Mon Mariage</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Cilene & Vianney – Mariage</title>
+  <!-- Google Fonts pour la touche chic -->
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,400|Inter:400,500" rel="stylesheet">
   <style>
-    body { background:#fff; color:#222; font-family:serif; max-width:720px; margin:0 auto; padding:32px; }
-    h1 { font-family:sans-serif; font-size:2.5rem; font-weight:400; margin:0 0 2rem; }
-    section { margin-bottom:3rem; }
-    .header { border-bottom:2px solid #eee; margin-bottom:2rem; }
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background: #fcfaf6;
+      color: #232323;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      padding: 60px 0 30px 0;
+      position: relative;
+      background: #fcfaf6;
+    }
+    .bande-jaune {
+      width: 90vw;
+      max-width: 1500px;
+      height: 70px;
+      background: url('bande-jaune.png') center/cover no-repeat;
+      margin: 0 auto 2rem auto;
+    }
+    .noms {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      margin: 0.5rem 0;
+    }
+    .dates {
+      margin: 1rem 0 0.5rem 0;
+      font-size: 1.3rem;
+      color: #b5963b;
+      font-weight: 500;
+    }
+    .dates .jour {
+      font-size: 2.3rem;
+      color: #dfb241;
+      font-weight: 700;
+      vertical-align: middle;
+      margin: 0 0.3rem;
+    }
+    .dates .we {
+      font-size: 1rem;
+      color: #232323;
+      font-weight: 400;
+      display: block;
+      margin-top: 0.2rem;
+    }
+    nav {
+      margin: 2.2rem 0 0 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: #2538a5;
+      font-weight: 500;
+      margin: 0 1.2rem;
+      font-size: 1.06rem;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: #e5a733;
+    }
+    .switch-lang {
+      margin-left: 1.6rem;
+      font-size: 1.05rem;
+    }
+    .switch-lang a {
+      color: #222;
+      text-decoration: none;
+      margin: 0 0.2rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    .switch-lang a.active {
+      color: #2538a5;
+      border-bottom: 2px solid #2538a5;
+      padding-bottom: 2px;
+    }
+    .vagues {
+      width: 100vw;
+      max-width: 1700px;
+      margin: 2.5rem auto 0 auto;
+      height: 80px;
+      background: url('vagues.png') center/cover no-repeat;
+    }
+
+    /* SECTION BIENVENUE */
+    .bienvenue {
+      max-width: 640px;
+      margin: 4.5rem auto 2.5rem auto;
+      background: rgba(255,255,255,0.98);
+      border-radius: 1.7rem;
+      box-shadow: 0 3px 24px 0 rgba(220,200,110,0.09);
+      padding: 2.7rem 2.2rem;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.28rem;
+      line-height: 1.7;
+      color: #232323;
+      letter-spacing: 0.01em;
+    }
+    @media (max-width: 700px) {
+      .noms { font-size: 2rem; }
+      .dates .jour { font-size: 1.3rem; }
+      .bienvenue { font-size: 1.08rem; padding: 1.2rem 0.8rem;}
+      .bande-jaune, .vagues {height:40px;}
+    }
   </style>
 </head>
 <body>
-  <div class="header">
-    <h1>Cilene & Vianney</h1>
-    <p>Un week-end sous le soleil pour célébrer l’amour</p>
-  </div>
-  <section>
-    <h2>Programme</h2>
-    <ul>
-      <li>Vendredi 16 juillet : Verre de bienvenue</li>
-      <li>Samedi 17 juillet : Cérémonie & Réception</li>
-      <li>Dimanche 18 juillet : Déjeuner au bord de la piscine</li>
-    </ul>
+  <header>
+    <div class="bande-jaune"></div>
+    <div class="noms">CILENE &amp; VIANNEY</div>
+    <div class="dates">
+      <span class="jour">17</span> juillet 2027
+      <span class="we">Week-end du 16 au 18 juillet</span>
+    </div>
+    <nav>
+      <a href="#programme">Programme</a>
+      <a href="#acces">Accès</a>
+      <a href="#rsvp">RSVP</a>
+      <span class="switch-lang">
+        <a href="#" class="active">FR</a> | <a href="#">PT</a>
+      </span>
+    </nav>
+    <div class="vagues"></div>
+  </header>
+
+  <section class="bienvenue">
+    Au fil des jours, l’amour se fête,<br>
+    sous le soleil et entourés de ceux qui comptent.<br>
+    Nous serions heureux de vous accueillir pour partager ces moments avec nous.
   </section>
-  <section>
-    <h2>Lieu</h2>
-    <p>Château de Vaucouleurs, Puget-sur-Argens</p>
-    <a href="https://maps.google.com" target="_blank">Voir sur la carte</a>
-  </section>
+
+  <!-- Ajoute ici les autres sections (Programme, Accès, RSVP, etc.) -->
+
 </body>
 </html>
