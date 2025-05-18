@@ -4,145 +4,166 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Cilene & Vianney – Mariage</title>
-  <!-- Playfair Display pour tout, très éditorial -->
-  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --jaune: #efc84a;
-      --bleu: #2538a5;
-      --fond: #fcfaf6;
+      --bleu: #23338d;
+      --fond: #f8f6f1;
       --texte: #232323;
-      --or: #dfb241;
+      --or: #e8b12c;
+      --rose: #f47c6c;
     }
     body {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Space Grotesk', Arial, sans-serif;
       background: var(--fond);
       color: var(--texte);
       margin: 0;
       padding: 0;
+      font-size: 1.14rem;
     }
     header {
-      position: relative;
       background: var(--fond);
       padding: 0 0 2.5rem 0;
+      position: relative;
     }
     .bande-jaune {
       width: 100vw;
-      min-height: 70px;
-      height: 13vw;
+      height: 54px;
       background: url('bande-jaune.png') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      margin: 0;
       position: relative;
+      z-index: 1;
     }
     nav.menu {
       position: absolute;
-      left: 0; top: 0; width: 100vw; height: 13vw; min-height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 6vw;
+      top: 0; left: 0; width: 100vw; height: 54px;
+      display: flex; align-items: center; justify-content: center;
       z-index: 2;
-      font-size: 1.15rem;
-      font-weight: 600;
     }
-    nav.menu a, nav.menu .switch-lang a {
+    nav.menu ul {
+      display: flex; list-style: none; gap: 2.8rem; margin: 0; padding: 0;
+      background: none;
+    }
+    nav.menu ul li {
+      font-weight: 600; font-size: 1.05rem; letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+    nav.menu ul li a {
       color: var(--bleu);
       text-decoration: none;
-      margin: 0 1.1rem;
-      font-weight: 600;
       transition: color 0.2s;
-      font-size: 1.07rem;
+      padding-bottom: 2px;
+    }
+    nav.menu ul li a:hover, nav.menu ul li a.active {
+      color: var(--rose);
+      border-bottom: 2px solid var(--jaune);
       background: none;
+    }
+    .switch-lang {
+      position: absolute;
+      right: 5vw;
+      top: 13px;
+      font-size: 1.08rem;
+      letter-spacing: 0.09em;
+    }
+    .switch-lang a {
+      color: var(--bleu);
+      text-decoration: none;
+      margin: 0 0.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      transition: color 0.2s;
       border: none;
-      outline: none;
-      font-family: inherit;
-    }
-    nav.menu a:hover, nav.menu .switch-lang a.active {
-      color: var(--or);
-      border-bottom: 2px solid var(--or);
-    }
-    nav.menu .switch-lang {
-      margin-left: 2vw;
       font-size: 1.09rem;
     }
-    nav.menu .switch-lang a {
-      margin: 0 0.25rem;
+    .switch-lang a.active {
+      color: var(--rose);
+      border-bottom: 2px solid var(--jaune);
     }
     .noms {
-      font-size: 3.2rem;
-      letter-spacing: 0.11em;
-      font-weight: 700;
-      margin: 3.8vw 0 0.8vw 0;
       text-align: center;
+      font-size: 2.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      margin: 4.5vw 0 1.1vw 0;
+      text-transform: uppercase;
       color: var(--texte);
     }
     .dates {
       text-align: center;
-      margin: 0;
-      font-size: 1.5rem;
+      font-size: 1.14rem;
       color: var(--or);
-      font-weight: 600;
-      letter-spacing: 0.04em;
+      font-weight: 500;
+      letter-spacing: 0.09em;
+      margin-bottom: 0.2rem;
     }
     .dates .jour {
-      font-size: 2.4rem;
-      color: var(--or);
+      font-size: 2rem;
+      color: var(--jaune);
       font-weight: 700;
-      margin: 0 0.35rem;
+      margin: 0 0.26rem;
       vertical-align: middle;
+      letter-spacing: 0.08em;
     }
     .dates .we {
       display: block;
-      color: var(--texte);
-      font-size: 1rem;
+      color: #6e6e6e;
+      font-size: 1.01rem;
       font-weight: 400;
-      margin-top: 0.05rem;
-      letter-spacing: 0;
+      margin-top: 0.07rem;
+      letter-spacing: 0.03em;
     }
     .vagues {
       width: 100vw;
-      min-height: 38px;
-      height: 5vw;
+      height: 15px;
       background: url('vagues.png') center/cover no-repeat;
-      margin: 2.2vw 0 0 0;
+      margin: 2vw 0 0 0;
       display: block;
     }
     .bienvenue {
-      max-width: 690px;
-      margin: 4rem auto 2rem auto;
-      background: rgba(255,255,255,0.99);
-      border-radius: 1.8rem;
-      box-shadow: 0 3px 16px 0 rgba(220,200,110,0.06);
-      padding: 2.5rem 2rem 2.5rem 2rem;
+      max-width: 660px;
+      margin: 4rem auto 2.5rem auto;
+      background: none;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 2.5rem 1.1rem 2rem 1.1rem;
       text-align: center;
-      font-size: 1.25rem;
-      line-height: 1.65;
+      font-size: 1.17rem;
+      line-height: 1.7;
       color: var(--texte);
-      letter-spacing: 0.01em;
+      letter-spacing: 0.03em;
+      position: relative;
+    }
+    .trait-color {
+      width: 85px; height: 7px;
+      background: linear-gradient(90deg, var(--jaune) 40%, var(--rose) 100%);
+      border-radius: 2.2px;
+      margin: 2.2rem auto 0.7rem auto;
     }
     @media (max-width: 900px) {
-      .noms { font-size: 2rem; }
-      .dates .jour { font-size: 1.3rem; }
-      .bande-jaune, nav.menu {height: 56px;}
-      .bienvenue { font-size: 1.08rem; padding: 1.2rem 0.7rem;}
-      .vagues { height: 32px;}
+      .noms { font-size: 1.5rem; }
+      .dates .jour { font-size: 1rem; }
+      .bande-jaune, nav.menu {height: 33px;}
+      .bienvenue { font-size: 1.02rem; padding: 0.7rem 0.3rem;}
+      .vagues { height: 8px;}
+      nav.menu ul { gap: 1.1rem; }
+      .switch-lang { right: 2vw; font-size: 0.97rem;}
     }
   </style>
 </head>
 <body>
-  <header>
+  <header style="position:relative;">
     <div class="bande-jaune"></div>
     <nav class="menu">
-      <div>
-        <a href="#programme">Programme</a>
-        <a href="#acces">Accès</a>
-        <a href="#rsvp">RSVP</a>
-      </div>
-      <div class="switch-lang">
+      <ul>
+        <li><a href="#programme">Programme</a></li>
+        <li><a href="#acces">Accès</a></li>
+        <li><a href="#rsvp">RSVP</a></li>
+      </ul>
+      <span class="switch-lang">
         <a href="#" class="active">FR</a> | <a href="#">PT</a>
-      </div>
+      </span>
     </nav>
     <div class="noms">CILENE &amp; VIANNEY</div>
     <div class="dates">
@@ -153,9 +174,11 @@
   </header>
 
   <section class="bienvenue">
+    <div class="trait-color"></div>
     Au fil des jours, l’amour se fête,<br>
     sous le soleil et entourés de ceux qui comptent.<br>
     Nous serions heureux de vous accueillir pour partager ces moments avec nous.
+    <div class="trait-color"></div>
   </section>
 </body>
 </html>
